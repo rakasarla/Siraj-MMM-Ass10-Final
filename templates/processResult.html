@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block body %}
+{% include "navbar.html" %}
+<title>Financial Bot</title>
+<header>
+  <style>
+      table, th, td {
+        border: 1px solid black;
+      }
+    </style>
+</header>
+<section class="hero is-primary is-bold is-small">
+  <div class="hero-body">
+    <!-- <div class="container has-text-centered"> -->
+    <div class="container has-text-left">
+      <div id="pneumonia" class="settings-box">
+        <div class="settings-area">    
+          <h1 class="title">Results {{ticker}}</h1>
+          <h4 class="field">{{result}}</h4>
+          <h4 class="field">Bot Performance for One Month</h4>
+          <div class="field">
+            <table>
+              <tr>
+                <th>Date</th>
+                <th>Buy/Sell</th>
+                <th>Qty</th>
+                <th>Close Price</th>
+              </tr>
+              {% for index, row in stockResultsDF.iterrows() %}
+                <tr>
+                    <td><h1>{{row['date']}}</h1></td>
+                    <td><h1>{{row['buySell']}}</h1></td>
+                    <td><h1>{{row['qty']}}</h1></td>
+                    <td><h1>{{row['price']}}</h1></td>
+                </tr>
+              {% endfor %}
+              </table>
+              <h4 class="field">Starting Investment: {{startValue}}</h4>
+              <h4 class="field">Ending Portfolio Value: {{endValue}}</h4>
+              <h4 class="field">Percentage Gain: {{percentGain}}%</h4>
+          </div>
+        </div>
+      </div>    
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="../static/js/scripts.js"></script>
+{% endblock %}
+      

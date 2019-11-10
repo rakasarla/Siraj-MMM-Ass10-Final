@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block body %}
+{% include "navbar.html" %}
+<title>Financial Bot</title>
+<body></body>
+<section class="hero is-primary is-bold is-large">
+  <div class="hero-body">
+      <div class="settings-area">    
+          <h1 class="title">Financial Bot</h1>
+          <p class="title is-2"></p>
+          {% if folder_name %}
+            <div class="field">
+                <form id="process" action="{{ url_for('process') }}" method="POST">
+                  <strong>Folder To Process: {{ folder_name }}</strong><br>
+                  <input type="hidden" name="folder_name" value={{ folder_name }}>
+                  <input type="submit" value="Process" id="login-button">
+                </form>        
+            </div>    
+          {% endif %}
+          </p>
+      </div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="../static/js/scripts.js"></script>
+{% endblock %}
+      
