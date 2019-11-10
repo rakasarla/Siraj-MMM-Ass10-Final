@@ -4,17 +4,24 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 
 
-def get_data(col='close', ticker='IBM'):
+# def get_data(col='close', ticker='IBM'):
+def get_data(col='Close', ticker='IBM'):
   """ Returns a 3 x n_step array """
   stock = pd.read_csv('data/daily_' + ticker + '.csv', usecols=[col])
   # recent price are at top; reverse it
-  return np.array([stock[col].values[::-1]])
+  # return np.array([stock[col].values[::-1]])
+  # yahoo finance is not reversed
+  return np.array([stock[col]])
 
-def get_dates(col='timestamp', ticker='IBM'):
+
+# def get_dates(col='timestamp', ticker='IBM'):
+def get_dates(col='Date', ticker='IBM'):
   """ Returns a 3 x n_step array """
   stock = pd.read_csv('data/daily_' + ticker + '.csv', usecols=[col])
   # recent price are at top; reverse it
-  return np.array([stock[col].values[::-1]])
+  # return np.array([stock[col].values[::-1]])
+  # yahoo finance is not reversed
+  return np.array([stock[col]])
 
 
 def get_scaler(env):

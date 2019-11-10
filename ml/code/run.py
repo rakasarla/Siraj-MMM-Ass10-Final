@@ -124,8 +124,8 @@ if __name__ == '__main__':
         agent.remember(state, action, reward, next_state, done)
       state = next_state
       if done:
-        print("episode: {}/{}, episode end value: {}".format(
-          e + 1, args.episode, info['cur_val']))
+        # print("episode: {}/{}, episode end value: {}".format(
+        #   e + 1, args.episode, info['cur_val']))
         portfolio_value.append(info['cur_val']) # append episode end portfolio value
         portfolio = Portfolio()
         portfolio.episode = e # Do you really need "+ 1"?

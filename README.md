@@ -26,8 +26,8 @@
 
 ## Setup
 ``` 
-git clone https://github.com/anfederico/Flaskex
-cd Flaskex
+git clone https://github.com/rakasarla/Siraj-MMM-Ass10-Final.git
+cd Siraj-MMM-Ass10-Final
 pip install -r requirements.txt
 python app.py
 ```
@@ -36,8 +36,19 @@ python app.py
 Please take a look at our [contributing](https://github.com/anfederico/Flaskex/blob/master/CONTRIBUTING.md) guidelines if you're interested in helping!
 
 
-## Assignment - Midterm
-- Date: 06-Oct-2019
-- Deployed on Heroku: https://siraj-ass5-midterm.herokuapp.com/
-- Feed X Ray files, some sample files are in files directory in this repo
 # Siraj-MMM-Ass10-Final
+- Date: 10-Nov-2019
+- Deployed on Heroku: https://siraj-ass10-final.herokuapp.com/
+- Also, due to limitations on Heroku, executing analysis and local laptop
+- and uploading results_{ticker}.csv file to display results
+- Following ticker result files are currently loaded:
+- Tickers: IBM, MSFT, QCOM, FDX, DAL, DIS, FB, AMZN, SPY, GDX, XLF, XOP, EEM and NVDA
+- Steps:
+- 1. Download tikcet file from finance.yahoo.com for 1 year
+- 2. Save this file in ml/code/data/daily_{ticker}.csv
+- 3. cd to ml/code
+- 4. python run.py --mode test --ticker IBM --weights weights/201911031029-dqn.h5
+- 5. make sure ml/code/results/results_{ticker}.csv is created
+- 6. Check into github
+- 7. Redeploy Heroku (check attached word doc for instructions)
+
