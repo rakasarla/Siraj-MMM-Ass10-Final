@@ -12,3 +12,4 @@ Pillow==5.1.0
 stripe==2.18.1
 # stripe==2.37.2
 # stripe
+pandas
